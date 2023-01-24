@@ -23,7 +23,10 @@ solution(ride_time, ride_distance, cost_per_minute
 */
 
 function solution(rideTime, rideDistance, costPerMinute, costPerMile) {
-  return costPerMile.map();
+  return costPerMile.map((rideMileCost, index) => {
+    const rideMinuteCost = costPerMinute[index]
+    return rideMinuteCost * rideTime + (rideMileCost * rideDistance)
+  }) 
 }
 
 //https://www.youtube.com/watch?v=Jng49-yFgWw
